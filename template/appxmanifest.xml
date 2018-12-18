@@ -4,17 +4,34 @@
    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
   <Identity Name="${identityName}"
-    ProcessorArchitecture="x64"
+    ProcessorArchitecture="${identityProcessorArchitecture}"
     Publisher="${publisherName}"
     Version="${packageVersion}" />
   <Properties>
     <DisplayName>${packageDisplayName}</DisplayName>
     <PublisherDisplayName>${publisherDisplayName}</PublisherDisplayName>
     <Description>No description entered</Description>
-    <Logo>assets\SampleAppx.50x50.png</Logo>
+    <Logo>assets\StoreLogo.scale-200.png</Logo>
   </Properties>
   <Resources>
-    <Resource Language="en-us" />
+    <Resource Language="en" />
+    <Resource Language="ar-SA" />
+    <Resource Language="zh-Hans-CN" />
+    <Resource Language="zh-Hant-TW" />
+    <Resource Language="nl-NL" />
+    <Resource Language="fr-FR" />
+    <Resource Language="de-DE" />
+    <Resource Language="it-IT" />
+    <Resource Language="id" />
+    <Resource Language="ja" />
+    <Resource Language="ko" />
+    <Resource Language="pt-BR" />
+    <Resource Language="pt-PT" />
+    <Resource Language="ru" />
+    <Resource Language="es-ES" />
+    <Resource Language="th" />
+    <Resource Language="tr" />
+    <Resource Language="vi" />
   </Resources>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
@@ -27,11 +44,29 @@
       <uap:VisualElements
        BackgroundColor="${packageBackgroundColor}"
        DisplayName="${packageDisplayName}"
-       Square150x150Logo="assets\SampleAppx.150x150.png"
-       Square44x44Logo="assets\SampleAppx.44x44.png"
+       Square150x150Logo="assets\Square150x150Logo.scale-200.png"
+       Square44x44Logo="assets\Square44x44Logo.scale-125.png"
        Description="${packageDescription}">
-        <uap:DefaultTile Wide310x150Logo="assets\SampleAppx.310x150.png" />
+        <uap:DefaultTile ShortName="${packageName}" Square310x310Logo="assets\Square310x310Logo.scale-200.png" Wide310x150Logo="assets\Wide310x150Logo.scale-200.png" Square71x71Logo="assets\Square71x71Logo.scale-200.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="assets\SplashScreen.scale-200.png" BackgroundColor="white" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="https://*.stripe.com" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="https://stripe.com" Type="include" WindowsRuntimeAccess="all" />
+      </uap:ApplicationContentUriRules>
     </Application>
   </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
 </Package>
