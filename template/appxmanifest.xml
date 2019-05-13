@@ -11,7 +11,7 @@
     <DisplayName>${packageDisplayName}</DisplayName>
     <PublisherDisplayName>${publisherDisplayName}</PublisherDisplayName>
     <Description>No description entered</Description>
-    <Logo>assets\StoreLogo.scale-200.png</Logo>
+    <Logo>assets\StoreLogo.scale-100.png</Logo>
   </Properties>
   <Resources>
     <Resource Language="en" />
@@ -34,27 +34,79 @@
     <Resource Language="vi" />
   </Resources>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.17134.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust"/>
   </Capabilities>
   <Applications>
     <Application Id="${packageName}" Executable="${packageExecutable}" EntryPoint="Windows.FullTrustApplication">
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="polarr">
+            <uap:Logo>assets\icon@16.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.jpg</uap:FileType>
+              <uap:FileType>.jpeg</uap:FileType>
+              <uap:FileType>.bmp</uap:FileType>
+              <uap:FileType>.png</uap:FileType>
+              <uap:FileType>.tif</uap:FileType>
+              <uap:FileType>.tiff</uap:FileType>
+              <uap:FileType>.cr2</uap:FileType>
+              <uap:FileType>.dng</uap:FileType>
+              <uap:FileType>.nef</uap:FileType>
+              <uap:FileType>.raw</uap:FileType>
+              <uap:FileType>.raf</uap:FileType>
+              <uap:FileType>.3fr</uap:FileType>
+              <uap:FileType>.ari</uap:FileType>
+              <uap:FileType>.arw</uap:FileType>
+              <uap:FileType>.bay</uap:FileType>
+              <uap:FileType>.crw</uap:FileType>
+              <uap:FileType>.cap</uap:FileType>
+              <uap:FileType>.dcs</uap:FileType>
+              <uap:FileType>.dcr</uap:FileType>
+              <uap:FileType>.drf</uap:FileType>
+              <uap:FileType>.eip</uap:FileType>
+              <uap:FileType>.erf</uap:FileType>
+              <uap:FileType>.fff</uap:FileType>
+              <uap:FileType>.iiq</uap:FileType>
+              <uap:FileType>.k25</uap:FileType>
+              <uap:FileType>.kdc</uap:FileType>
+              <uap:FileType>.mef</uap:FileType>
+              <uap:FileType>.mos</uap:FileType>
+              <uap:FileType>.mrw</uap:FileType>
+              <uap:FileType>.nrw</uap:FileType>
+              <uap:FileType>.obm</uap:FileType>
+              <uap:FileType>.orf</uap:FileType>
+              <uap:FileType>.pef</uap:FileType>
+              <uap:FileType>.ptx</uap:FileType>
+              <uap:FileType>.pxn</uap:FileType>
+              <uap:FileType>.r3d</uap:FileType>
+              <uap:FileType>.rwl</uap:FileType>
+              <uap:FileType>.rw2</uap:FileType>
+              <uap:FileType>.rwz</uap:FileType>
+              <uap:FileType>.sr2</uap:FileType>
+              <uap:FileType>.srf</uap:FileType>
+              <uap:FileType>.srw</uap:FileType>
+              <uap:FileType>.x3f</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
       <uap:VisualElements
        BackgroundColor="${packageBackgroundColor}"
        DisplayName="${packageDisplayName}"
-       Square150x150Logo="assets\Square150x150Logo.scale-200.png"
-       Square44x44Logo="assets\Square44x44Logo.scale-125.png"
+       Square150x150Logo="assets\Square150x150Logo.scale-100.png"
+       Square44x44Logo="assets\Square44x44Logo.scale-100.png"
        Description="${packageDescription}">
-        <uap:DefaultTile ShortName="${packageName}" Square310x310Logo="assets\Square310x310Logo.scale-200.png" Wide310x150Logo="assets\Wide310x150Logo.scale-200.png" Square71x71Logo="assets\Square71x71Logo.scale-200.png">
+        <uap:DefaultTile ShortName="${packageName}" Square310x310Logo="assets\Square310x310Logo.scale-100.png" Wide310x150Logo="assets\Wide310x150Logo.scale-100.png" Square71x71Logo="assets\Square71x71Logo.scale-100.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
             <uap:ShowOn Tile="wide310x150Logo" />
             <uap:ShowOn Tile="square310x310Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="assets\SplashScreen.scale-200.png" BackgroundColor="white" />
+        <uap:SplashScreen Image="assets\SplashScreen.scale-100.png" BackgroundColor="white" />
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape" />
           <uap:Rotation Preference="landscapeFlipped" />
